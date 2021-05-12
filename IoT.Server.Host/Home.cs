@@ -80,12 +80,12 @@ namespace IoT.Server.Host
                     options.Invariant = "System.Data.SqlClient";
                     options.UseJsonFormat = true;
                 }))
-                .AddRedisGrainStorage("Redis", config => config.Configure(options =>
-                {
-                    options.ConnectionString = "127.0.0.1:6379";
-                    options.UseJson = true;
-                    options.DatabaseNumber = 1;
-                }))
+                //.AddRedisGrainStorage("Redis", config => config.Configure(options =>
+                //{
+                //    options.ConnectionString = "127.0.0.1:6379";
+                //    options.UseJson = true;
+                //    options.DatabaseNumber = 1;
+                //}))
                 .ConfigureApplicationParts(parts =>
                 {
                     parts.AddApplicationPart(typeof(IStatistics).Assembly).WithReferences();
